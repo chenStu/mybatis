@@ -34,17 +34,4 @@ class UserMapperTest {
 		sqlSession.close();
 	}
 
-	@Test
-	void testInsertUser() throws Exception{
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		// 创建UserMapper对象，mybatis自动生成mapper代理对象
-		UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-		User user = new User();
-		user.setName("root");
-		user.setAge(21);
-		userMapper.insertUser(user);
-		System.out.println(user.getId());
-		sqlSession.commit();
-		sqlSession.close();
-	}
 }
